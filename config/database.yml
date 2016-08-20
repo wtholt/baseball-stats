@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: password
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: baseball-stats_development
+
+test:
+  <<: *default
+  database: baseball-stats_test
+
+production:
+  <<: *default
+  database: baseball-stats_production
+  username: baseball-stats
+  password: <%= ENV['BASEBALL-STATS_DATABASE_PASSWORD'] %>
