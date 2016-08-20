@@ -12,6 +12,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.0.0'
 end
+group :test do
+  gem 'database_cleaner'
+end
 group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
